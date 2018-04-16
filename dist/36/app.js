@@ -21,10 +21,18 @@ Move.prototype.action = function () {
 	this.emit("jump");
 };
 
+Move.prototype.msg = function (txt) {
+	this.emit("message", txt);
+};
+
 var j = new Move();
 
 j.on("jump", function () {
 	console.log("I am jumping !!!");
 });
+j.on("message", function (txt) {
+	console.log("Passed parameter: " + txt);
+});
 
 j.action();
+j.msg("Ben");
