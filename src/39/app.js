@@ -1,5 +1,4 @@
 import util from "util";
-
 function Appliance(man) {
 	this.manufacturer = man;
 }
